@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+
+
+{% block myblock %}
+
+<h1>register</h1>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+		</div>
+		<div class="col-md-6">
+			<h1>sign up here</h1>
+			<form action="" method="post">
+				{% csrf_token %}
+				<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<label>first name</label>
+						<input type="text" class="form-control" placeholder="first name" name="first">
+					</div>
+					<div class="col-md-6">
+						<label>last name</label>
+						<input type="text" class="form-control" placeholder="last name" name="last">
+					</div>
+				</div>
+			</div>
+			
+
+			<div class="form-group">
+				<label>username</label>
+						<input type="text" class="form-control" placeholder="username" name="username">
+
+			<div class="form-group">
+				<label>Contact number</label>
+						<input type="text" class="form-control" placeholder="contact no" name="contactno">
+
+								<label>password</label>
+						<input type="password" class="form-control" placeholder="password" name="password">
+					</div>
+
+			<div class="form-group">
+				<label> user type </label>
+				<select name="utype" class="form-control">
+					<option value="cust">i am client</option>
+					<option value="sell">i am seller</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<input type="submit" value="Signup" class="btn btn-outline-light bg-primary">
+			</div>
+
+
+		</form>
+		</div>
+	</div>
+</div>
+
+		
+{% endblock %}

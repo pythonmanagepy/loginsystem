@@ -1,0 +1,97 @@
+<h2>
+
+<a href="{{url('customer_dashboard')}}">BACK</a>
+</h2>
+<h3>STATEMENT</h3>
+<table class="table table-bordered table-primary">
+						<tbody>
+							<tr>
+								<th>DATE    </th>
+							
+
+								<th>BILL.NO   </th>
+							
+
+								<th>DEBIT   </th>
+							
+
+								<th>CREDIT   </th>
+							
+
+								
+							
+
+								<th>DESC</th>
+							
+							</tr>
+
+					
+						
+
+
+{% set j = namespace(value=0) %}
+
+{% set totaldebit = namespace(value=0) %}
+{% set totalcredit = namespace(value=0) %}
+
+{% set balance = namespace(value=0) %}
+{% set balanceone = namespace(value=0) %}
+
+
+{% for i in data %}
+{% set totaldebit.value= totaldebit.value+i.debit %}
+{% set totalcredit.value= totalcredit.value+i.credit %}
+
+
+
+
+
+
+
+
+
+
+
+							<tr>
+								<th>{{i.dt}}</th>
+						
+							
+
+								<th>{{i.billno}}</th>
+							
+
+								<th>{{i.debit}}</th>
+								
+								
+							
+
+								<th>{{i.credit}}</th>
+
+								
+								
+								
+
+
+							
+
+							
+							</tr>
+
+
+
+
+{% endfor %}
+{% set balance.value=totaldebit.value-totalcredit.value  %}
+
+
+
+
+
+					</tbody>
+					</table>
+
+
+
+<h3>TOTAL BALANCE</h3>
+{{balance.value}}
+

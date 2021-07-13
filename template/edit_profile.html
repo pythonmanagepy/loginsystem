@@ -1,0 +1,93 @@
+
+{% extends 'dashboard_base.html' %}
+{% block dashboard %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 mx-auto py-5 text-center text-primary">
+			<h1>EDIT PROFILE</h1>
+
+			<div class="col-md-6 mx-auto p-5 bg-dark">
+				<form action="" method="post">
+					{% csrf_token %}
+					{% if status %}
+						<div class="alert alert-success">{{status}}</div>
+
+					{% endif %}
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label>First Name</label>
+								<input type="text" class="form-control" name="fname" placeholder="Enter Name" value="{{user.first_name}}">
+							</div>
+
+							<div class="col-md-6">
+								<label>Last Name</label>
+								<input type="text" class="form-control" name="lname" placeholder="Enter Last Name" value="{{user.last_name}}">
+							</div>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label>Email</label>
+								<input type="email" class="form-control" name="email" placeholder="Email" value="{{user.email}}">
+							</div>
+
+							<div class="col-md-6">
+								<label>City</label>
+								<input type="text" class="form-control" name="city" placeholder="Enter City" value="{{data.city}}">
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+			<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label>Contact Number</label>
+								<input type="integer" class="form-control" name="contact" placeholder="Contact Number" value="{{data.contact_number}}">
+							</div>
+
+							<div class="col-md-6">
+								<label>Age</label>
+								<input type="text" class="form-control" name="age" placeholder="Enter Age" value="{{data.age}}">
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-12">
+								<label>About</label>
+								<input type="text" class="form-control" name="about" placeholder="About yourself" value="{{data.about}}">
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<div class="form-group">
+						<input type="submit" name="changeprofile" value="Save changes" class="btn btn-primary" style="width:50%;" >
+					</div>
+
+
+				</form>
+			</div>
+
+			
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
